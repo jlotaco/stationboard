@@ -1,0 +1,18 @@
+.no-dizmo-drag {
+  -apple-dashboard-region: dashboard-region(control rectangle); }
+
+  body {
+    margin: 0px;
+    padding: 0px; }
+
+    #front {
+      width: 100%; }
+
+      #back .done-btn-wrapper {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        text-align: center; }
+        #back .done-btn-wrapper .done-btn {
+          margin-bottom: 20px; }
