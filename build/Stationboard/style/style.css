@@ -7,12 +7,34 @@
 
     #front {
       width: 100%; }
+      #front #connections {
+        width: 100%; }
+        #front .timeandvehicle {
+          width: 70px;
+          height: 70px;
+          border-style: solid;
+          border-width: 1px;
+          margin: 0px;
+          float: left; }
+          #front .details {
+            width: 270px;
+            height: 70px;
+            border-style: solid;
+            border-width: 1px;
+            position: absolute;
+            left: 70px; }
+            #front #second-details {
+              top: 80px;
+              position: absolute; }
+              #front #second-tav {
+                top: 80px;
+                position: absolute; }
 
-      #back .done-btn-wrapper {
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
-        width: 100%;
-        text-align: center; }
-        #back .done-btn-wrapper .done-btn {
-          margin-bottom: 20px; }
+#back .done-btn-wrapper {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  text-align: center; }
+  #back .done-btn-wrapper .done-btn {
+    margin-bottom: 20px; }

@@ -2,7 +2,7 @@
 // can delete it!
 
 var  base = "http://transport.opendata.ch/v1/";
-var connections;
+var conn, intervalid;
 
 function showBack() {
     dizmo.showBack();
@@ -14,20 +14,27 @@ function getNextConnections(departure) {
 	$.ajax({
         url: _url
     }).then(function(data) {
-       console.log(data);
-       response = data;
-       connections = data;
-       $('#front').empty();
+      console.log(data);
 
-       $("#front").append(connections.station.name + " [" +connections.stationboard[0].name+"]"
-       	+connections.stationboard[0].to + "   " + connections.stationboard[0].stop.departure );
 
-       $("#front").append('<br>');
-       $("#front").append('<br>');
-       $("#front").append('<br>');
+        conn = data;
 
-       $("#front").append(connections.station.name + " [" +connections.stationboard[1].name+"]"
-       	+connections.stationboard[1].to + "   " + connections.stationboard[1].stop.departure );
+        var departure1 = new Date(conn.stationboard[0].stop.departureTimestamp*1000);
+        var departure2 = new Date(conn.stationboard[1].stop.departureTimestamp*1000)
+
+        $('#first .time').text(departure1.getHours() + ":" + departure1.getMinutes());
+
+        $('#second .time').text(departure2.getHours() + ":" + departure2.getMinutes());
+
+        $('#first .details').text("to " + conn.stationboard[0].to);
+        $('#second .details').text("to " + conn.stationboard[1].to);
+        // $('#front').empty();
+
+        // $("#front").append(conn.station.name + " [" +conn.stationboard[0].name+"]"
+       	// +conn.stationboard[0].to + "   " + conn.stationboard[0].stop.departure );
+
+        // $("#front").append(conn.station.name + " [" +conn.stationboard[1].name+"]"
+       	// +conn.stationboard[1].to + "   " + conn.stationboard[1].stop.departure );
 
 
 
@@ -45,7 +52,7 @@ window.document.addEventListener('dizmoready', function() {
         dizmo.showFront();
     };
 
-    setInterval(function(){getNextConnections("Winterthur, Schloss")}, 5000);
+    // intervalid = setInterval(function(){getNextConnections("Winterthur, Schloss")}, 5000);
 
 
 });
