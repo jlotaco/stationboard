@@ -12,10 +12,18 @@ body {
     #connections {
         width: 100%;
     }
+    .vehicleicon img{
+        position: relative;
+        top: 10px;
+        left: 10px;
+        width: 49px
+
+    }
     .timeandvehicle {
         width: 70px;
         height: 70px;
-        border-style: solid;
+        border-wyle: solid;
+        border-radius: 5px;
         border-width: 1px;
         margin: 0px;
         float: left;
@@ -27,18 +35,48 @@ body {
         height: 70px;
         border-style: solid;
         border-width: 1px;
+        border-radius: 5px;
         position: absolute;
-        left: 70px;
-
+        left: 80px;
 
     }
-
-    #second-details {
+    .time{
+        width: 70px;
+        margin: auto;
+        position: relative;
+        top: 5px;
+        font-size: 35px;
+    }
+    .details .destination{
+        position: relative;
+        top: 5px;
+        left: 5px;
+        font-size: 20px;
+    }
+        #second-details {
         top: 80px;
         position: absolute;
     }
     #second-tav{
         top: 80px;
+        position: absolute;
+    }
+
+    #third-details {
+        top: 160px;
+        position: absolute;
+    }
+    #third-tav{
+        top: 160px;
+        position: absolute;
+    }
+
+    #fourth-details {
+        top: 240px;
+        position: absolute;
+    }
+    #fourth-tav{
+        top: 240px;
         position: absolute;
     }
 }
