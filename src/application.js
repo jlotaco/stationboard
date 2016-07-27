@@ -35,20 +35,48 @@ function getNextConnections(departure) {
         var departure3 = new Date(conn.stationboard[2].stop.departureTimestamp*1000);
 
         var departure4 = new Date(conn.stationboard[3].stop.departureTimestamp*1000);
-        
-        $('#first .time').text(departure1.getHours() + ":" + departure1.getMinutes());
-        $('#second .time').text(departure2.getHours() + ":" + departure2.getMinutes());
-        $('#third .time').text(departure3.getHours() + ":" + departure3.getMinutes());
-        $('#fourth .time').text(departure4.getHours() + ":" + departure4.getMinutes());
+
+        $('#first .time').text(departure1.getHours() + ":");
+        $('#second .time').text(departure2.getHours() + ":");
+        $('#third .time').text(departure3.getHours() + ":");
+        $('#fourth .time').text(departure4.getHours() + ":");
+        if (departure1.getMinutes()<10){
+          $('#first .time').text($('#first .time').text() + "0" + departure1.getMinutes());
+        }
+        else {
+          $('#first .time').text($('#first .time').text() + departure1.getMinutes());
+        }
+
+        if (departure2.getMinutes()<10){
+          $('#second .time').text($('#second .time').text() + "0" + departure2.getMinutes());
+        }
+        else {
+          $('#second .time').text($('#second .time').text() + departure2.getMinutes());
+        }
+
+        if (departure3.getMinutes()<10){
+          $('#third .time').text($('#third .time').text() + "0" + departure3.getMinutes());
+        }
+        else {
+          $('#third .time').text($('#third .time').text() + departure3.getMinutes());
+        }
+
+        if (departure4.getMinutes()<10){
+          $('#fourth .time').text($('#fourth .time').text() + "0" + departure4.getMinutes());
+        }
+        else {
+          $('#fourth .time').text($('#fourth .time').text() + departure4.getMinutes());
+        }
+
         $('#first .vehicleicon img').attr('src', getVehicleFromCategory(conn.stationboard[0].category));
         $('#second .vehicleicon img').attr('src', getVehicleFromCategory(conn.stationboard[1].category));
         $('#third .vehicleicon img').attr('src', getVehicleFromCategory(conn.stationboard[2].category));
         $('#fourth .vehicleicon img').attr('src', getVehicleFromCategory(conn.stationboard[3].category));
 
-        $('#first .destination').text("to " + conn.stationboard[0].to);
-        $('#second .destination').text("to " + conn.stationboard[1].to);
-        $('#third .destination').text("to " + conn.stationboard[2].to);
-        $('#fourth .destination').text("to " + conn.stationboard[3].to);
+        $('#first .destination').text(conn.stationboard[0].name + " to " + conn.stationboard[0].to);
+        $('#second .destination').text(conn.stationboard[1].name + " to " + conn.stationboard[1].to);
+        $('#third .destination').text(conn.stationboard[2].name + " to " + conn.stationboard[2].to);
+        $('#fourth .destination').text(conn.stationboard[3].name + " to " + conn.stationboard[3].to);
         // $('#front').empty();
 
         // $("#front").append(conn.station.name + " [" +conn.stationboard[0].name+"]"
@@ -70,25 +98,25 @@ function getVehicleFromCategory(category){
 
     switch (category) {
         case "IR":
-            vehicle = "icons/train.png"
+            vehicle = "style/train.png"
         break;
         case "S":
-            vehicle = "icons/train.png"
+            vehicle = "style/train.png"
         break;
         case "T":
-            vehicle = "icons/tram.png"
+            vehicle = "style/tram.png"
         break;
         case "ICN":
-            vehicle = "icons/train.png"
+            vehicle = "style/train.png"
         break;
         case "ICN":
-            vehicle = "icons/train.png"
+            vehicle = "style/train.png"
         break;
         case "NFT":
-            vehicle = "icons/tram.png"
+            vehicle = "style/tram.png"
         break;
         case "NFB":
-            vehicle = "icons/bus.png"
+            vehicle = "style/bus.png"
         break;
     }
     return vehicle
@@ -126,7 +154,7 @@ window.document.addEventListener('dizmoready', function() {
 
 
         }
-    
+
     // intervalid = setInterval(function(){getNextConnections("Winterthur, Schloss")}, 5000);
 
 

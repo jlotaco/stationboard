@@ -17,17 +17,13 @@
           #front .timeandvehicle {
             width: 70px;
             height: 70px;
-            border-wyle: solid;
-            border-radius: 5px;
-            border-width: 1px;
             margin: 0px;
             float: left; }
             #front .details {
               width: 270px;
               height: 70px;
-              border-style: solid;
+              border-bottom-style: solid;
               border-width: 1px;
-              border-radius: 5px;
               position: absolute;
               left: 80px; }
               #front .time {
